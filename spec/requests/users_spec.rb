@@ -1,0 +1,31 @@
+require 'rails_helper'
+
+RSpec.describe 'Users', type: :request do
+  describe 'GET /index' do
+    before(:example) { get users_path }
+
+    it 'server return 200 server ok' do
+      expect(response).to have_http_status(200)
+    end
+
+    it 'template rendering correctly' do
+      expect(response).to render_template(:index)
+    end
+
+    it 'shows body content of index' do
+      expect(response.body).to include('<h1>Users</h1>')
+    end
+  end
+
+  describe 'USERS GET #show' do
+    before(:example) { get('/users#show') }
+
+    it 'return 200' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'shows body content of USERS#show' do
+      expect(response.body).to include('<h1>Users</h1>')
+    end
+  end
+end

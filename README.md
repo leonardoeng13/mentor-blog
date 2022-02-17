@@ -91,7 +91,6 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](https://github.com/Hamzaoutdoors/Blog_app/blob/dev/LICENSE.md) licensed.
 
 <!-- rails generate migration CreatePosts author_id:bigint title:string text:text comments_counter:integer likes_counter:integer -->
 
