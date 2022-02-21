@@ -68,11 +68,11 @@ $ rails db:seed
 
 ## Authors
 
-👤 **Ellaouzi Hamza**
+👤 **Leo de Andrade**
 
-- GitHub: [hamzaoutdoors](https://github.com/Leonardoeng13)
-- LinkedIn : [Hamza Ellaouzi](https://www.linkedin.com/in/leonardodeandrade/)
-- Twitter: [Hamza Ellaouzi](https://twitter.com/andrede_leo)
+- GitHub: [leodeandrade13](https://github.com/Leonardoeng13)
+- LinkedIn : [Leonardo de Andrade](https://www.linkedin.com/in/leonardodeandrade/)
+- Twitter: [Leo de Andrade](https://twitter.com/andrede_leo)
 
 ## 🤝 Contributing
 
