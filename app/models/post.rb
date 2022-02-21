@@ -1,16 +1,16 @@
 class Post < ApplicationRecord
-  belongs_to :editor, class_name: 'User'
-  has_many :comments, foreign_key: 'post_id', class_name: 'Comment'
-  has_many :likes, foreign_key: 'post_id', class_name: 'Like'
+  belongs_to :user
+  has_many :comments
+  has_many :likes
 
   def update_comments_counter
-    comments_counter = Comment.where(post_id: id).count
-    update(comments_counter: comments_counter)
+    commentscounter = Comment.where(post_id: id).count
+    update(CommentsCounter: commentscounter)
   end
 
   def update_likes_counter
-    likes_counter = Like.where(post_id: id).count
-    update(likes_counter: likes_counter)
+    likescounter = Like.where(post_id: id).count
+    update(LikesCounter: likescounter)
   end
 
   def most_recent_comments
