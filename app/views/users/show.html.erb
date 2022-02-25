@@ -1,16 +1,26 @@
-<div class="container">
-  <h1 class="py-5"><%= @user.name %> Detail</h1>
-  <%= render partial: "layouts/header", locals: {user: @user} %>
-  <div class="w-100 border border-dark my-4 p-3">
-     <h2>BIO</h2>
-     <p><%= @user.bio %></p>
-  </div>
-  <h2><%= @user.name %>'s Posts</h2>
-  <% @user.most_recent_posts.each do |post| %>
-    <%= render partial: "posts/post", locals: {post: post, user: @user} %>
-  <% end %>
-  <div class="d-flex justify-content-center align-items-center w-100 py-5">
-    <%= link_to "See all posts", user_posts_path(@user.id), {class: "btn btn-primary w-25"}%>
-  </div>
-</div>
+<p id="notice"><%= notice %></p>
 
+<p class="h3">
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+    <div class="col">
+      <td><%= image_tag url_for(@user.photo), :size => "400x300", class: "img-thumbnail" %></td>
+    </div>
+</p>
+
+<p class="text-start">
+  <strong>Bio:</strong>
+  <%= @user.bio %>
+</p>
+
+<p>
+  <strong>Postscounter:</strong>
+  <%= @user.PostsCounter %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

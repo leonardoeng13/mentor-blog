@@ -1,13 +1,46 @@
-<h1 class="container py-5">Welcome to your Mentor App</h1>
-<% @users.each do |user| %>
-  <div class="header-wrapper container d-flex justify-content-around my-3"> 
-    <div class="image-container">
-      <%=image_tag(image_url(user), alt: "User#{user.id} photo") %>
-    </div>
-    <%=  link_to user_path(user.id), {class: "user_container d-flex justify-content-between text-decoration-none"} do%>
-      <h2><%= user.name %></h2>
-      <span>Number of posts: <%= post_counter(user) %></span>
-    <%end%>
-  </div>
-<%end%>
-<p class="container py-5 display-4">Thanks for using this Mentor App</h1>
+<p id="notice"><%= notice %></p>
+<div class="d-flex align-items-center justify-content-center">
+  <h1>Users</h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" >Name</th>
+      <th scope="col" >Photo</th>
+      <th scope="col" >Bio</th>
+      <th scope="col" >Posts</th>
+      <th scope="col"  colspan="3">Options</th>
+    </tr>
+  </thead>
+
+  <tbody class="table table-striped">
+    <% @users.each do |user| %>
+      <tr>
+        <div class="container">
+          <div class="row align-items-start">
+            <div class="col">
+              <td><%= user.name %></td>
+            </div>
+            <div class="col">
+              <td><%= image_tag url_for(user.photo), :size => "100x75", class: "img-thumbnail" %></td>
+            </div>
+            <div class="col">
+              <td><%= user.bio %></td>
+            </div>
+            <div class="col">
+              <td><%= user.PostsCounter %></td>
+            </div>
+            <div class="col">
+              <td><%= link_to 'Show', user %></td>
+              <td><%= link_to 'Edit', edit_user_path(user) %></td>
+              <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </div>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>

@@ -7,18 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users = User.create([
-	{ name: 'Leo', bio: "I'm a Professional Tech Mentor for juniors.", posts_counter: 0},
-	{ name: 'Leonardo', bio: "I'm a Professional Tech Mentor for juniors.", posts_counter: 0},
-	{ name: 'Leo de Andrade', bio: "I'm a Professional Tech Mentor for juniors.", posts_counter: 0},
-	{ name: 'Leonardo de Andrade', bio: "I'm a Professional Tech Mentor for juniors.", posts_counter: 0},
-	{ name: 'Leonardo Andrade', bio: "I'm a Professional Tech Mentor for juniors.", posts_counter: 0}
+	{ name: 'Leo', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0},
+	{ name: 'Leonardo', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0},
+	{ name: 'Leo de Andrade', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0},
+	{ name: 'Leonardo de Andrade', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0},
+	{ name: 'Leonardo Andrade', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0}
 	])
   
   all_users = User.all
   
   all_users.each do |user|
 	for j in 1..5 do
-	  Post.create(title: "Post number: #{j}", text: "I'm writing this new post number: #{j}", comments_counter: 0, likes_counter: 0, author_id: user.id)
+	  Post.create(title: "Post number: #{j}", text: "I'm writing this new post number: #{j}", CommentsCounter: 0, LikesCounter: 0, user_id: user.id)
 	end
   end
   
@@ -26,7 +26,7 @@ users = User.create([
   
   all_posts.each do |post|
 	for j in 1..3 do
-	  Like.create(author_id: all_users[j].id, post_id: post.id)
-	  Comment.create(author_id: all_users[j].id, post_id: post.id, text: "I'm #{all_users[j].name} and I'm adding some comments here.")
+	  Like.create(user_id: all_users[j].id, post_id: post.id)
+	  Comment.create(user_id: all_users[j].id, post_id: post.id, text: "I'm #{all_users[j].name} and I'm adding some comments here.")
 	end
   end

@@ -1,0 +1,42 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group mb-3 w-25 p-3">
+    <%= form.label :user_id, class: "input-group-text"  %>
+    <%= form.text_field :user_id, class:"form-control"  %>
+  </div>
+
+  <div class="input-group mb-3 w-25 p-3">
+    <%= form.label :title, class: "input-group-text"  %>
+    <%= form.text_field :title, class:"form-control"  %>
+  </div>
+
+  <div class="input-group mb-3 w-25 p-3">
+    <%= form.label :text, class: "input-group-text"  %>
+    <%= form.text_area :text, class:"form-control"  %>
+  </div>
+
+  <div class="input-group mb-3 w-25 p-3">
+    <%= form.label :Comments, class: "input-group-text"  %>
+    <%= form.number_field :CommentsCounter, class:"form-control"  %>
+  </div>
+
+  <div class="input-group mb-3 w-25 p-3">
+    <%= form.label :Likes, class: "input-group-text"  %>
+    <%= form.number_field :LikesCounter, class:"form-control"  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-primary btn-lg" %>
+  </div>
+<% end %>

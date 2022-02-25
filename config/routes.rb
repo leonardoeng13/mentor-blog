@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :comments
+  resources :likes
+  resources :posts
   get 'likes/create'
   get 'comments/create'
   resources :users
