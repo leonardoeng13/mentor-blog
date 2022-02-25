@@ -1,31 +1,47 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  describe 'GET /index' do
-    before(:example) { get users_path }
+  describe 'GET /users' do
+    before :each do
+      get users_path
+    end
 
-    it 'server return 200 server ok' do
+    it 'should work!' do
       expect(response).to have_http_status(200)
     end
 
-    it 'template rendering correctly' do
+    it 'renders template correctly' do
       expect(response).to render_template(:index)
     end
 
-    it 'shows body content of index' do
-      expect(response.body).to include('<h1>Users</h1>')
+    it "doesn\'t renders template  other than /users" do
+      expect(response).to_not render_template(:show)
+    end
+
+    it 'shows the correct placeholder text' do
+      expect(response.body).to include('User was successfully created.')
     end
   end
 
-  describe 'USERS GET #show' do
-    before(:example) { get('/users#show') }
-
-    it 'return 200' do
-      expect(response).to have_http_status(:ok)
+  describe 'GET /users/:id' do
+    before :each do
+      get user_path(1)
     end
 
-    it 'shows body content of USERS#show' do
-      expect(response.body).to include('<h1>Users</h1>')
+    it 'should work correctly' do
+      expect(response).to have_http_status(200)
+    end
+
+    it 'renders show template correctly' do
+      expect(response).to render_template(:show)
+    end
+
+    it "doesn\'t renders template other than /users/:id" do
+      expect(response).to_not render_template(:index)
+    end
+
+    it 'shows the correct placeholder text' do
+      expect(response.body).to include('On Construction')
     end
   end
 end

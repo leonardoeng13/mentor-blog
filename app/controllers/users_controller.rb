@@ -1,15 +1,21 @@
 class UsersController < ApplicationController
-  def new; end
+  def index
+    @users = User.order(:id)
+  end
 
-  def create; end
+  def show
+    @user = User.find(params[:id])
+    @posts = Post.where(author_id: @user.id)
+  end
 
-  def update; end
+  def create
+    @user = User.create(user_params)
+    redirect_to @user
+  end
 
-  def edit; end
+  private
 
-  def destroy; end
-
-  def index; end
-
-  def show; end
+  def user_params
+    params.require(:user).permit(:name, :bio, :photo)
+  end
 end

@@ -1,2 +1,0 @@
-class UserPosts < ApplicationRecord
-end
