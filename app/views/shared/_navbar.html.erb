@@ -19,6 +19,18 @@
             <%= link_to "Likes", likes_path, class: "nav-link" %>
         </li>
       </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn bnt-outline-secondary" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
