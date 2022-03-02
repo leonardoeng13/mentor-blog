@@ -10,7 +10,7 @@ A **Blog app** similar classic blog website. With fully functional website that 
 
 </br>
  <div align="center">
-    <img alt="gif" src="./public/blog_app_erd.png" width=50% />
+    <img alt="gif" src="blog_app_erd.png" width=50% />
     <p>Entity Relationship Diagram (ERD) of Blog App project</p>
 </div>
 
