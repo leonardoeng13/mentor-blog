@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users = User.create([
-	{ name: 'Leo', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0},
-	{ name: 'Leonardo', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0},
-	{ name: 'Leo de Andrade', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0},
-	{ name: 'Leonardo de Andrade', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0},
-	{ name: 'Leonardo Andrade', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0}
+	{ name: 'Leo', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0, email: "test@test.com", password: "password"},
+	{ name: 'Leonardo', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0, email: "test1@test.com", password: "password"},
+	{ name: 'Leo de Andrade', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0, email: "test2@test.com", password: "password"},
+	{ name: 'Leonardo de Andrade', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0, email: "test3@test.com", password: "password"},
+	{ name: 'Leonardo Andrade', photo: 'https://media.gettyimages.com/photos/portrait-of-smiling-young-man-with-backpack-in-the-city-on-the-go-picture-id1186932544', bio: "I'm a Professional Tech Mentor for juniors.", PostsCounter: 0, email: "test4@test.com", password: "password"}
 	])
   
   all_users = User.all
