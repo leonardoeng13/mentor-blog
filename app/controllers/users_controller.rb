@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
   before_action :set_user, only: %i[show edit update destroy]
 
   # GET /users or /users.json
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
+    @user.user_id = current_user.id
 
     respond_to do |format|
       if @user.save
