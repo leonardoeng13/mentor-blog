@@ -17,8 +17,8 @@
         <td><%= comment.post_id %></td>
         <td><%= comment.text %></td>
         <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%if can? :update, comment %><%= link_to 'Edit', edit_comment_path(comment) %><% end %></td>
+        <td><%if can? :destroy, comment %><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
       </tr>
     <% end %>
   </tbody>

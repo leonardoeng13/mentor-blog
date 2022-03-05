@@ -36,8 +36,8 @@
               </div>
               <div class="col">
                 <td><%= link_to 'Show', post %></td>
-                <td><%= link_to 'Edit', edit_post_path(post) %></td>
-                <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%if can? :update, post %><%= link_to 'Edit', edit_post_path(post) %><% end %></td>
+                <td><%if can? :destroy, post %><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
               </div>
       </tr>
     <% end %>
