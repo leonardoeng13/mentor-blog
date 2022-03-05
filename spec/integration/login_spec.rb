@@ -3,7 +3,11 @@ require 'capybara/rspec'
 
 RSpec.describe 'Login' do
   before :each do
-    User.create(name: 'Test', email: 'test@test.com', password: 'test1234', role: false, PostCounter: 0)
+    user = User.create(name: 'Test', email: 'test@test.com', password: 'test1234', admin: false, PostsCounter: 0)
+    user.password = 'test1234'
+    user.password_confirmation = 'test1234'
+    user.skip_confirmation!
+    user.save!
   end
 
   describe 'when vising log in page', type: :feature do
@@ -38,7 +42,7 @@ RSpec.describe 'Login' do
       fill_in 'Email', with: 'test@test.com'
       fill_in 'Password', with: 'test1234'
       click_button 'Log in'
-      expect(page).to have_text('Hi, Test!')
+      expect(page).to have_text('Signed in successfully.')
     end
   end
 end

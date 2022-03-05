@@ -22,5 +22,7 @@
   <%= @user.PostsCounter %>
 </p>
 
+<%= link_to "User Posts", posts_path, class: "btn btn-link"%>
+
 <%if can? :update, @user %><%= link_to 'Edit', edit_user_path(@user) %> |<% end %>
 <%= link_to 'Back', users_path %>
